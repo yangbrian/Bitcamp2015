@@ -1,7 +1,7 @@
 <?php
 //Get stock data off yahoo API
 $symbol = strtoupper($_POST['ticker']);
-$currentInfo = file_get_contents("http://finance.yahoo.com/d/quotes.csv?s=$symbol&f=xopm3m8m4m6jkl1");
+$currentInfo = file_get_contents("http://finance.yahoo.com/d/quotes.csv?s=$symbol&f=xopm3m8m4m6jkl1b4d0y0r0v0");
 $csv = str_getcsv($currentInfo);
 
 $values = array('stockExchange' => $csv[0],
@@ -13,7 +13,12 @@ $values = array('stockExchange' => $csv[0],
     '200dayAvgPercent' => $csv[6],
     '52wkLow' => $csv[7],
     '52wkHigh' => $csv[8],
-    'lastTradedPrice' => $csv[9]
+    'lastTradedPrice' => $csv[9],
+    'bookVal' => $csv[10],
+    'divYield' => $csv[11],
+    'divYieldPercent' => $csv[12],
+    'peRatio' => $csv[13],
+    'volume' => $csv[14],
 );
 $test = json_encode($values);
 
@@ -84,4 +89,21 @@ $test = json_encode($values);
 </table>
 <div id="priceGraph">
     <img src="http://chart.finance.yahoo.com/z?s=<?php echo($symbol);?>&t=6m&q=l&l=on&z=l"/>
+</div>
+<div id="facts">
+    <div id="factsHeader">
+        Some interesting facts...
+    </div>
+    <ul id="factList">
+        <?php
+            if ($values['50dayAvgPercent'] < -0.05)
+            {
+                echo "<li class='fact'>" . $symbol . " has dipped <strong>" . $values['50dayAvgPercent'] . "</strong> over the past 50 days - now might want to be a good time to buy!</li>";
+            }
+            else if ($values['50dayAvgPercent'] > 0.05)
+            {
+                echo "<li class='fact'>" . $symbol . " has raised <strong>" . $values['50dayAvgPercent'] . "</strong> over the past 50 days - now might not be the best time to buy!</li>";
+            }
+        ?>
+    </ul>
 </div>
