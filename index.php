@@ -6,18 +6,11 @@
 	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-	<table>
-		<tr>
-			<td style='width: 30%;'><img class = 'newappIcon' src='images/newapp-icon.png'>
-			</td>
-			<td>
-				<h1 id = "message"><?php echo "Hello world!"; ?>
-</h1>
-				<p class='description'></p> Thanks for creating a <span class="blue">PHP Starter Application</span>. Get started by reading our <a
-				href="https://www.ng.bluemix.net/docs/#starters/php/index.html#php">documentation</a>
-				or use the Start Coding guide under your app in your dashboard.
-			</td>
-		</tr>
-	</table>
+    <strong>Welcome to Sallie Bae - enter a stock below!</strong>
+    <form action="stockSearch.php" method="get">
+        <div id="stockSearch">Ticker Symbol: </div>
+        <input type="text" name="ticker">
+        <input type="submit" value="Search!">
+    </form>
 </body>
 </html>
