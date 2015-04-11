@@ -1,6 +1,6 @@
 <?php
 //Get stock data off yahoo API
-$symbol = strtoupper($_GET['ticker']);
+$symbol = strtoupper($_POST['ticker']);
 $test = file_get_contents("http://finance.yahoo.com/d/quotes.csv?s=AAPL&f=xopm3m8m4m6jkl1");
 $csv = str_getcsv($test);
 $values = array('stockExchange' => $csv[0],
