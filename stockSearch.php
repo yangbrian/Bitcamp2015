@@ -1,7 +1,7 @@
 <?php
 //Get stock data off yahoo API
 $symbol = strtoupper($_POST['ticker']);
-$currentInfo = file_get_contents("http://finance.yahoo.com/d/quotes.csv?s=$symbol&f=xopm3m8m4m6jkl1b4d0y0r0v0");
+$currentInfo = file_get_contents("http://finance.yahoo.com/d/quotes.csv?s=$symbol&f=xopm3m8m4m6jkl1b4dyrva2");
 $csv = str_getcsv($currentInfo);
 
 $values = array('stockExchange' => $csv[0],
@@ -19,8 +19,8 @@ $values = array('stockExchange' => $csv[0],
     'divYieldPercent' => $csv[12],
     'peRatio' => $csv[13],
     'volume' => $csv[14],
+    'avgDailyVolume' => $csv[15]
 );
-$test = json_encode($values);
 
 //foreach($values as $key => $value)
 //{
@@ -96,13 +96,47 @@ $test = json_encode($values);
     </div>
     <ul id="factList">
         <?php
-            if ($values['50dayAvgPercent'] < -0.05)
+            //Dividends
+            if ($values['divYield'] > 0)
             {
-                echo "<li class='fact'>" . $symbol . " has dipped <strong>" . $values['50dayAvgPercent'] . "</strong> over the past 50 days - now might want to be a good time to buy!</li>";
+                echo "<li class='fact'>Hey look! " . $symbol . " pays <strong>$" . $values['divYield'] . "</strong> dividends per stock a year - " . $values['divYieldPercent'] . "% annually!";
             }
-            else if ($values['50dayAvgPercent'] > 0.05)
+
+            //Check price vs 50 day averages (mid-term holdings)
+            if ($values['50dayAvgPercent'] < -4)
+            {
+                echo "<li class='fact'>" . $symbol . " has dipped <strong>" . $values['50dayAvgPercent'] . "</strong> over the past 50 days - now might want to be a good time to sell!</li>";
+            }
+            else if ($values['50dayAvgPercent'] > 4)
             {
                 echo "<li class='fact'>" . $symbol . " has raised <strong>" . $values['50dayAvgPercent'] . "</strong> over the past 50 days - now might not be the best time to buy!</li>";
+            }
+
+            //Check prices vs 200 day averages (long-term holdings)
+            if ($values['200dayAvgPercent'] < -8)
+            {
+                echo "<li class='fact'>" . $symbol . " has dipped <strong>" . $values['200dayAvgPercent'] . "</strong> over the past 200 days - now might want to be a good time to buy long term!</li>";
+            }
+            else if ($values['200dayAvgPercent'] > 8)
+            {
+                echo "<li class='fact'>" . $symbol . " has raised <strong>" . $values['200dayAvgPercent'] . "</strong> over the past 200 days - now might not be the best time to buy long term!</li>";
+            }
+
+            //Volume - a measure of volatility
+            if ($values['volume'] > ($values['avgDailyVolume'] * 1.1))
+            {
+                echo "<li class='fact'>" . $symbol . "'s volume is <strong>" . round(($values['volume'] - $values['avgDailyVolume']) / $values['volume'] * 100, 2) . "%</strong> higher than its normal daily average. Something's up!";
+            }
+            else if ($values['avgDailyVolume'] > ($values['volume'] * 1.1))
+            {
+                echo "<li class='fact'>" . $symbol . "'s volume is <strong>" . round(($values['avgDailyVolume'] - $values['volume']) / $values['avgDailyVolume'] * 100, 2) . "%</strong> lower than its normal daily average. Something's up!";
+            }
+
+            //Book value - basically, if the company bankrupted, how much money would each share receive?
+            if ($values['bookVal'] > ($values['lastTradedPrice']) * 1.05)
+            {
+                echo "<li class='fact'>" . $symbol . "'s book value is higher than its current price. That means that it the company bankrupted, each share would receive " .
+                    "<strong>$" . $values['bookVal'] . "</strong> while the current price is " . $values['lastTradedPrice'];
             }
         ?>
     </ul>
