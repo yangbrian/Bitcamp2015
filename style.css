@@ -94,6 +94,8 @@ div#header {
 div#resultBox {
     padding-top: 10px;
     display: block;
+    width: 70%;
+    margin: auto;
 }
 
 div.clear {
