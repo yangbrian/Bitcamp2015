@@ -59,14 +59,6 @@ h1 {
 }
 
 
-table {
-	table-layout: fixed;
-	width: 800px;
-	margin: 0 auto;
-	word-wrap: break-word;
-	padding-top:10%;
-}
-
 th {
 	border-bottom: 1px solid #000;
 }
@@ -87,3 +79,35 @@ pre {
 	margin: 0;
 }
 
+div#body {
+    width: 70%;
+    margin: auto;
+}
+
+div#header {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    padding-top: 10px;
+}
+
+div#resultBox {
+    padding-top: 10px;
+    display: block;
+}
+
+div.clear {
+    clear: both;
+}
+
+div.floatLeft {
+    float: left;
+}
+
+div.floatRight {
+    float: right;
+}
+
+input.upperCase {
+    text-transform: uppercase;
+}

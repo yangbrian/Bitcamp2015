@@ -1,8 +1,9 @@
 <?php
 //Get stock data off yahoo API
 $symbol = strtoupper($_POST['ticker']);
-$test = file_get_contents("http://finance.yahoo.com/d/quotes.csv?s=AAPL&f=xopm3m8m4m6jkl1");
-$csv = str_getcsv($test);
+$currentInfo = file_get_contents("http://finance.yahoo.com/d/quotes.csv?s=$symbol&f=xopm3m8m4m6jkl1");
+$csv = str_getcsv($currentInfo);
+
 $values = array('stockExchange' => $csv[0],
     'open' => $csv[1],
     'prevClose' => $csv[2],
@@ -22,8 +23,7 @@ $test = json_encode($values);
 //}
 ?>
 
-
-<div>
+<div id="stockName">
     Stock information for: <strong><?php echo($symbol) ?></strong>
     <br>
     Last traded price: <?php echo($values['lastTradedPrice']); ?>
@@ -82,3 +82,6 @@ $test = json_encode($values);
         </td>
     </tr>
 </table>
+<div id="priceGraph">
+    <img src="http://chart.finance.yahoo.com/z?s=<?php echo($symbol);?>&t=6m&q=l&l=on&z=l"/>
+</div>
