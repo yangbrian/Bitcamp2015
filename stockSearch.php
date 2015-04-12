@@ -88,7 +88,7 @@ $values = array('stockExchange' => $csv[0],
     </tr>
 </table>
 <div id="priceGraph">
-    <img src="http://chart.finance.yahoo.com/z?s=<?php echo($symbol);?>&t=6m&q=l&l=on&z=l"/>
+    <img src="http://chart.finance.yahoo.com/z?s=<?php echo($symbol);?>&t=6m&q=l&l=on&z=l&c=%5EDJI"/>
 </div>
 <div id="facts">
     <div id="factsHeader">
