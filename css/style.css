@@ -49,7 +49,7 @@ body, html {
   margin: 0 auto;
   font: 16px 'Source Sans Pro', Arial, sans-serif;
   color: #000000;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   /* fix for sticky footer */ }
 
 /* line 55, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
@@ -199,13 +199,13 @@ input.upperCase {
 /* line 188, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
 #home-link {
   position: absolute;
-  top: 50px;
+  top: 200px;
   left: 15px; }
 
 /* line 194, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
 #other-link {
   position: absolute;
-  top: 50px;
+  top: 200px;
   right: 15px; }
 
 /* line 199, C:/Users/Brian/Desktop/InvestBit/css/style.scss */

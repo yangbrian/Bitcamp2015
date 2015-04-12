@@ -10,14 +10,16 @@
 
 <body>
 <header id="header">
-    <div class="button" id="home-link">Home</div>
+
     <h1><img src="images/InvestBit.png" alt="InvestBit" title="InvestBit" /></h1>
-    <div class="button" id="other-link">Other</div>
+
 </header>
 
 <section id="welcome">
     <div class="container">
-        <p>Welcome to InvestBit! Please choose an option below to begin.</p>
+        <div class="button" id="home-link">Home</div>
+        <p id="welcome-msg">Welcome to InvestBit! Please choose an option below to begin.</p>
+        <div class="button" id="other-link">Other</div>
     </div>
 </section>
 
@@ -46,6 +48,15 @@
         <input class="button" type="submit" value="Search!" />
     </form>
     <div id="analystsForm-resultBox"></div>
+
+    <h3>Meta Ratings Explained</h3>
+    <img src="images/Meta-Rating-with-Percentiles.png" />
+    <h3>Ranking System Explained</h3>
+    <img src="images/Ranking-System-Explanation.png" />
+    <h3>Income Distribution</h3>
+    <img src="images/Income-Distribution.png" />
+    <h3>Infographic</h3>
+    <img width="800" style="margin-bottom: 150px;" src="images/BitCamp-Infographic-For-Web.png" />
 </div>
 
 
