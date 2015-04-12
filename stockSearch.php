@@ -29,7 +29,7 @@ $values = array('stockExchange' => $csv[0],
 ?>
 
 <div id="stockName">
-    Stock information for: <strong><?php echo($symbol) ?></strong>
+    <h2>Stock information for: <strong><?php echo($symbol) ?></strong></h2>
     <br>
     Last traded price: <?php echo($values['lastTradedPrice']); ?>
 </div>
@@ -91,9 +91,9 @@ $values = array('stockExchange' => $csv[0],
     <img src="http://chart.finance.yahoo.com/z?s=<?php echo($symbol);?>&t=6m&q=l&l=on&z=l"/>
 </div>
 <div id="facts">
-    <div id="factsHeader">
+    <h3 id="factsHeader">
         Some interesting facts...
-    </div>
+    </h3>
     <ul id="factList">
         <?php
             //Dividends

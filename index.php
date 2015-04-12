@@ -3,7 +3,7 @@
 <head>
     <title>InvestBit</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
@@ -23,22 +23,32 @@
 
 <div id="start">
     <div class="left">
-        <button class="button" id="stocks">Stocks</button>
+        <button class="button" id="stocks-button">Stocks</button>
     </div>
     <div class="right">
-        <button class="button" id="analysts">Analysts</button>
+        <button class="button" id="analysts-button">Analysts</button>
     </div>
 </div>
 
 <div id="stocks-page">
-
+    <form id="tickerForm">
+        <label for="ticker">Ticker Symbol: </label>
+        <input placeholder="AAPL" class="upperCase" type="text" name="ticker" />
+        <input class="button" type="submit" value="Search!" />
+    </form>
+    <div id="tickerForm-resultBox"></div>
 </div>
 
 <div id="analysts-page">
-
+    <form id="analystsForm">
+        <label for="analyst">Analyst Name: </label>
+        <input placeholder="John Smith" type="text" name="analyst" />
+        <input class="button" type="submit" value="Search!" />
+    </form>
+    <div id="analystsForm-resultBox"></div>
 </div>
 
-<div id="resultBox"></div>
+
 
 <footer id="footer">
     <p>Created by Brian Chen, Nicholas Walsh, and Brian Yang

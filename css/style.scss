@@ -49,6 +49,11 @@ html {
     margin: 0 auto;
     font: 16px $fonts;
     color: #000000;
+    padding-bottom: 50px; /* fix for sticky footer */
+}
+
+strong {
+    font-weight: bold;
 }
 
 ::-moz-selection {
@@ -69,6 +74,10 @@ h1 {
 
 h2 {
     font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.6em;
 }
 
 .left {
@@ -134,8 +143,9 @@ h2 {
 
 #stocks-page, #analysts-page {
     padding: 15px;
-    width: 600px;
+    width: 800px;
     margin: auto;
+    text-align: center;
 }
 
 form {
@@ -185,4 +195,22 @@ input.upperCase {
     position: absolute;
     top: 50px;
     right: 15px;
+}
+#values {
+    width: 100%;
+}
+
+
+
+div[id$="resultBox"] {
+    padding: 15px;
+    margin-top: 15px;
+}
+
+#priceGraph {
+    padding: 15px 0;
+}
+
+ul#factList li {
+    padding-bottom: 5px;
 }

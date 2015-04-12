@@ -6,10 +6,20 @@
     Nick Walsh
     Brian Yang
  */
+$('#stocks-page').hide();
+$('#analysts-page').hide();
 
+$('#stocks-button').on("click", function() {
+    $('#start').hide();
+    $('#stocks-page').show();
+});
+$('#analysts-button').on("click", function() {
+    $('#start').hide();
+    $('#analysts-page').show();
+
+});
 $("#tickerForm").on("submit", function (e) {
     console.log("Ticker form");
-    
     submitResult("#tickerForm", "stockSearch.php", e);
 });
 
@@ -27,8 +37,8 @@ function submitResult(selector, file, e) {
         url: file,
         data: $(selector).serialize(),
         success: function (data) {
-            $(selector).reset();
-            $("#resultBox").html(data);
+            //$(selector).reset();
+            $(selector + '-' + 'resultBox').html(data);
         }
     });
 }
