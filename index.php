@@ -1,64 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sallie Bae - Bitcamp 2015</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" href="style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <title>InvestBit</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
+
 <body>
-    <div id="body">
-        <div id="header">
-            Welcome to Sallie Bae - enter a stock below!
-        </div>
-        <div class="floatLeft">
-            <form id="tickerForm" action="">
-                <div id="stockSearch">Ticker Symbol: </div>
-                <input class="upperCase" type="text" name="ticker"/>
-                <input type="submit" value="Search!"/>
-            </form>
-        </div>
-        <div class="floatRight">
-            <form id="analystForm" action="">
-                <div id="analystSearch">Analyst Name: </div>
-                <input type="text" name="name"/>
-                <input type="submit" value="Search!/">
-            </form>
-        </div>
-        <div class="clear"></div>
-        <div id="resultBox"></div>
+<header id="header">
+    <div class="button" id="home-link">Home</div>
+    <h1><img src="images/InvestBit.png" alt="InvestBit" title="InvestBit" /></h1>
+    <div class="button" id="other-link">Other</div>
+</header>
+
+<section id="welcome">
+    <div class="container">
+        <p>Welcome to InvestBit! Please choose an option below to begin.</p>
     </div>
-    <script>
-        //AJAX request for stock search
-        $("#tickerForm").submit(function() {
-            var url = "stockSearch.php";
+</section>
 
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $('#tickerForm').serialize(),
-                success: function(data) {
-                    document.getElementById("analystForm").reset();
-                    $("#resultBox").html(data);
-                }
-            });
-            event.preventDefault();
-        });
-        //AJAX request for analyst search
-        $("#analystForm").submit(function() {
-            var url = "analystSearch.php";
+<div id="start">
+    <div class="left">
+        <button class="button" id="stocks">Stocks</button>
+    </div>
+    <div class="right">
+        <button class="button" id="analysts">Analysts</button>
+    </div>
+</div>
 
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $('#analystForm').serialize(),
-                success: function(data) {
-                    document.getElementById("tickerForm").reset();
-                    $("#resultBox").html(data);
-                }
-            });
-            event.preventDefault();
-        });
-    </script>
+<div id="stocks-page">
+
+</div>
+
+<div id="analysts-page">
+
+</div>
+
+<div id="resultBox"></div>
+
+<footer id="footer">
+    <p>Created by Brian Chen, Nicholas Walsh, and Brian Yang
+        <br/>at Bitcamp 2015 (Apr. 10-12)</p>
+</footer>
+
+<script type="text/javascript" src="js/invest.js"></script>
 </body>
+
 </html>

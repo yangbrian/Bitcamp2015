@@ -1,0 +1,200 @@
+/* 
+    InvestBit Styles
+
+    Brian Chen
+    Nick Walsh
+    Brian Yang
+ */
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+/* line 10, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+/* line 10, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* line 10, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+body {
+  line-height: 1; }
+
+/* line 10, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 10, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 10, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+/* line 10, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Colors are based on the Material Design palette */
+/* line 45, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+body, html {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  font: 16px 'Source Sans Pro', Arial, sans-serif;
+  color: #000000; }
+
+/* line 54, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+::-moz-selection {
+  background-color: #29b6f6; }
+
+/* line 58, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+::selection {
+  background-color: #29b6f6; }
+
+/* line 62, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+a {
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; }
+
+/* line 66, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+h1 {
+  font-size: 2em; }
+
+/* line 70, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+h2 {
+  font-size: 1.8em; }
+
+/* line 74, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+.left {
+  float: left; }
+
+/* line 78, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+.right {
+  float: right; }
+
+/* line 82, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+.container {
+  padding: 15px;
+  text-align: center; }
+
+/* line 86, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+#header {
+  width: 100%;
+  padding: 20px 0; }
+  /* line 90, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+  #header h1 {
+    text-align: center; }
+
+/* line 95, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+#nav {
+  background: #29b6f6; }
+  /* line 98, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+  #nav a#home {
+    text-align: center; }
+
+/* line 103, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+#welcome {
+  background-color: #489d4a; }
+
+/* line 107, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+#start {
+  padding: 60px; }
+  /* line 29, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+  #start:before, #start:after {
+    content: "";
+    display: table; }
+  /* line 33, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+  #start:after {
+    clear: both; }
+
+/* line 112, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+.button {
+  background: transparent;
+  border: 1px #489d4a solid;
+  color: #489d4a;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  /* line 120, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+  .button:hover {
+    background: #489d4a;
+    color: #fff; }
+
+/* line 126, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+#start {
+  width: 600px;
+  margin: auto; }
+  /* line 129, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+  #start .button {
+    font-size: 2.5em;
+    padding: 15px; }
+
+/* line 135, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+#stocks-page, #analysts-page {
+  padding: 15px;
+  width: 600px;
+  margin: auto; }
+
+/* line 141, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+form {
+  text-align: center; }
+  /* line 143, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+  form label {
+    margin-right: 10px; }
+
+/* line 148, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+input {
+  font: 16px 'Source Sans Pro', Arial, sans-serif;
+  margin-top: 5px;
+  padding: 10px; }
+  /* line 153, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+  input:active, input:focus {
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5); }
+
+/* line 160, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+input[type="submit"] {
+  margin-left: 5px; }
+
+/* line 164, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+input.upperCase {
+  text-transform: uppercase; }
+
+/* line 168, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+#footer {
+  background: #757575;
+  color: #fff;
+  bottom: 0px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  padding: 10px 0; }
+
+/* line 178, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+#home-link {
+  position: absolute;
+  top: 50px;
+  left: 15px; }
+
+/* line 184, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+#other-link {
+  position: absolute;
+  top: 50px;
+  right: 15px; }
+
+/*# sourceMappingURL=style.css.map */

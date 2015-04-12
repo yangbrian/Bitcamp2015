@@ -1,5 +1,4 @@
 __author__ = 'Brian Yang'
-import time
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import re
@@ -15,17 +14,19 @@ def getAnalystInfo(url):
     name = soup.find("h1", class_="full-name")
 
     totalAmtManaged = soup.find_all(text=re.compile("across"))
+    id = soup.find("div", class_="col-lg-7").span
+
     try:
         amt = totalAmtManaged[0].replace(",", "")
         amt = amt[1:amt.index('(')]
-        print(name.next_element + "," + amt)
-        file.write(name.next_element + "," + amt + "\n")
+        print(id.next_element + "," + name.next_element + "," + amt)
+        file.write(id.next_element + "," + name.next_element + "," + amt + "\n")
     except IndexError:
         file.write("\n")
 
 base_url = "https://www.wealthminder.com"
 
-# generate a list of all profile links
+# generate a list of all profile links by DFS
 def getWealthMinderLinks(url, level):
 
     # main (0) > state (1) > city (2) > profile (3)
@@ -38,10 +39,6 @@ def getWealthMinderLinks(url, level):
 
     # only the span has any useful class, so get the span > a > li
     link = soup.find("span", class_="title").parent.parent
-    # print(link)
-
-    if link is None:
-        return
 
     while link is not None:
         link = link.find("a") # get the next link
@@ -50,8 +47,9 @@ def getWealthMinderLinks(url, level):
         getWealthMinderLinks(next_link, level + 1)
         link = link.parent.next_sibling.next_sibling  # find adjacent li element
 
+    # next pages
     if soup.find(text=re.compile("Next >>")) is not None:
-        getWealthMinderLinks(soup.find(text=re.compile("Next >>")).previous_element, level)
+        getWealthMinderLinks(soup.find(text=re.compile("Next >>")).previous_element.get("href"), level)
 
 getWealthMinderLinks('/financial-advisors/', 0)
 
