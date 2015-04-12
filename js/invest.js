@@ -3,7 +3,7 @@
     April 10-12, 2015
     
     Brian Chen
-    Nick Walsh
+    Nicholas Walsh
     Brian Yang
  */
 $('#stocks-page').hide();

@@ -225,4 +225,10 @@ div[id$="resultBox"] {
 ul#factList li {
   padding-bottom: 5px; }
 
+/* line 218, C:/Users/Brian/Desktop/InvestBit/css/style.scss */
+ul#infractions {
+  list-style: disc;
+  width: 150px;
+  margin: auto; }
+
 /*# sourceMappingURL=style.css.map */
